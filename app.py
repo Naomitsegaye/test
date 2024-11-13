@@ -26,9 +26,12 @@ install_required_packages()
 import pandas as pd
 import streamlit as st
 
+
+#### Add more columns with one personality, another column for one interest for dataset foe 10 records and the name me is for myself 
 # FRIEND SWIPING DATA
+### Create a new column named match with yes or no 
 friend_swiping_data = {
-    'name': ['Alex', 'Taylor', 'Jordan', 'Morgan', 'Chris'],
+    'name': ['Me',''Alex', 'Taylor', 'Jordan', 'Morgan', 'Chris'],
     'age': [25, 22, 28, 24, 30],
     'bio': [
         "Loves hiking and the outdoors.",
@@ -50,6 +53,7 @@ friend_swiping_df = pd.DataFrame(friend_swiping_data)
 
 
 # GET FRIEND SWIPING VISUAL FUNCTION
+## Filter in the dataset has similar interest and personality 
 def get_friend_swiping_page(df):
     # Initialize session state variables
     if 'liked_profiles' not in st.session_state:
@@ -64,6 +68,7 @@ def get_friend_swiping_page(df):
 
     st.title("Friend Finder Swiping App")
 
+    ## add a column for my matches based on ppl I have matched and update it in the dataset everytime make a match
     # Check if there are more profiles to show
     if st.session_state.profile_index < len(df):
         current_profile = df.iloc[st.session_state.profile_index]
