@@ -3,11 +3,11 @@ import os
 import subprocess
 import pandas as pd
 import streamlit as st
-import random
+import numpy as np  # Added missing numpy import
 
 def install_required_packages():
     """Install required packages if they're not already installed"""
-    required_packages = ['pandas', 'streamlit']
+    required_packages = ['pandas', 'streamlit', 'numpy']  # Added numpy to required packages
     for package in required_packages:
         try:
             __import__(package)
